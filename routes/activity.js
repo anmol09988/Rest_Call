@@ -263,7 +263,7 @@ exports.validate = function (req, res) {
        // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
         console.log("response.statusCode"+response.statusCode);
-        console.log("respresprespresp"+response.access_token);
+        console.log("respresprespresp"+response.token_type);
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
