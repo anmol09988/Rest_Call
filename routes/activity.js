@@ -99,13 +99,15 @@ exports.execute = function (req, res) {
 
     const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
-    const to = requestBody.to;
+    const SubscriberKey = requestBody.SubscriberKey;
+    const EmailAddress = requestBody.EmailAddress;
     const from = requestBody.messagingService;
     const body = requestBody.body;   
     console.log("requestBody: "+requestBody);
     console.log("ExecutedaccountSid: "+accountSid);
     console.log("ExecutedauthToken: "+authToken);
-    console.log("Executedto: "+to);
+    console.log("SubscriberKey: "+SubscriberKey);
+    console.log("EmailAddress: "+EmailAddress);
     console.log("Executedfrom: "+from);
     console.log("Executedbody: "+body);
     

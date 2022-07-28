@@ -104,7 +104,8 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "to": "{{Event.DEAudience-0a845042-fe54-8ac9-88a5-b9947cda7676.PhoneNo}}" //<----This should map to your data extension name and phone number column
+            "SubscriberKey": "{{Event.DEAudience-5c5d26c1-6e38-5c52-df65-e7677b80eaee.SubscriberKey}}", //<----This should map to your data extension name and phone number column
+            "EmailAddress": "{{Event.DEAudience-5c5d26c1-6e38-5c52-df65-e7677b80eaee.EmailAddress}}"
         }];
 
         payload['metaData'].isConfigured = true;
