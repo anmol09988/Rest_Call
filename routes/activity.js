@@ -251,7 +251,7 @@ exports.validate = function (req, res) {
         
         var body = JSON.stringify(response);
       //  var body2 = JSON.parse(response);
-        var sccestoken = check.access_token;
+        var sccestoken = body.access_token;
         console.log("body.access_token"+body);
       //  console.log("body2.access_token"+body2);
         console.log("response.access_token"+sccestoken);
