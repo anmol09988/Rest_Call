@@ -250,8 +250,10 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
         console.log("responseresponse"+response);
         console.log("ssssssssssssssfdfff"+JSON.stringify(response.access_token));
-        console.log("sssffsfsfsfs"+JSON.stringify(response));
-        console.log("response.access_token"+response.access_token);
+        var check = JSON.stringify(response);
+        var sccestoken = check.access_token;
+        console.log("response.access_token"+check);
+        console.log("response.access_token"+sccestoken);
         console.log("response.statusCode"+response.statusCode);
     });
 
