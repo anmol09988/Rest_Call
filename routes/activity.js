@@ -264,6 +264,7 @@ exports.validate = function (req, res) {
        // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
         console.log("response.statusCode"+response);
+        console.log("sssssssssssssssssssssssssssssssssss"+body.get('access_token'));
         console.log("respresprespresp"+response.access_token);
     });
 
