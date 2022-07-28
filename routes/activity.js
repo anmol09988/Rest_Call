@@ -260,7 +260,7 @@ exports.validate = function (req, res) {
         // const accesstokken = obj.access_token;
 
        // console.log("body.access_token"+body);
-        console.log("body2.access_token"+body['access_token']);
+        console.log("body2.access_token"+JSON.parse(JSON.stringify(body)));
        // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
         console.log("response.statusCode"+response);
