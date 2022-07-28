@@ -29,7 +29,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "e7994b9c-0785-4378-8748-f4f4f8a68ba0",
+      "applicationExtensionKey": "125213fc-83f4-405f-a040-296a99ef2aee",
        "save": {
            "url": "https://restapica.herokuapp.com/check/save",
             "verb": "POST",
