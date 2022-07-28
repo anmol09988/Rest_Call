@@ -249,7 +249,7 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
         
         var body = JSON.stringify(response);
-       // var resp = Request.response.access_token;
+        var resp = response.access_token;
        // console.log("tokenResponse" +resp);
        // var body2 = JSON.parse(response);
        // var sccestoken = body.access_token;
@@ -263,6 +263,7 @@ exports.validate = function (req, res) {
        // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
         console.log("response.statusCode"+response.statusCode);
+        console.log("respresprespresp"+resp);
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
