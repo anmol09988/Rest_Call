@@ -179,14 +179,22 @@ exports.execute = function (req, res) {
     //     console.log('Error: ', err.message);
     // });
 
-    const https = require('https');
-
-    let request = https.get('https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token', (res) => {
-        if (res.statusCode !== 200) {
-            console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
-            res.resume();
-            return;
-        }
+    var request = require('request');
+   // To post JSON data:
+    
+    var myJSONObject = {
+                            "grant_type": "client_credentials",
+                            "client_id": "ewozgxquu4nriupcx2tylyfl",
+                            "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+                            "account_id": "526000739"
+                        };
+    request({
+        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+        method: "POST",
+        json: true,   // <--Very important!!!
+        body: myJSONObject
+    }, function (error, response, body){
+        console.log(response);
     });
 
     res.send(200, 'Execute');
@@ -227,15 +235,24 @@ exports.validate = function (req, res) {
     console.log("2");
     console.log("1");
 
-    const https = require('https');
-
-    let request = https.get('https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token', (res) => {
-        if (res.statusCode !== 200) {
-            console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
-            res.resume();
-            return;
-        }
+    var request = require('request');
+   // To post JSON data:
+    
+    var myJSONObject = {
+                            "grant_type": "client_credentials",
+                            "client_id": "ewozgxquu4nriupcx2tylyfl",
+                            "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+                            "account_id": "526000739"
+                        };
+    request({
+        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+        method: "POST",
+        json: true,   // <--Very important!!!
+        body: myJSONObject
+    }, function (error, response, body){
+        console.log(response);
     });
+
     // console.log("Validated: "+req.body.inArguments[0]);   
 
     // Data from the req and put it in an array accessible to the main app.
