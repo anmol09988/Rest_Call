@@ -93,7 +93,7 @@ exports.execute = function (req, res) {
     console.log("3");
     console.log("2");
     console.log("1");
-    
+
 
     var requestBody = req.body.inArguments[0];
 
@@ -102,36 +102,36 @@ exports.execute = function (req, res) {
     const SubscriberKey = requestBody.SubscriberKey;
     const EmailAddress = requestBody.EmailAddress;
     const from = requestBody.messagingService;
-    const body = requestBody.body;   
-    console.log("requestBody: "+requestBody);
-    console.log("ExecutedaccountSid: "+accountSid);
-    console.log("ExecutedauthToken: "+authToken);
-    console.log("SubscriberKey: "+SubscriberKey);
-    console.log("EmailAddress: "+EmailAddress);
-    console.log("Executedfrom: "+from);
-    console.log("Executedbody: "+body);
-    
-//       const client = require('twilio')(accountSid, authToken);
-//          client.messages
-//         .create({body: body, from: '+12562903890', to: '+917869544724', messagingService: messagingService })
-//         .then(message => console.log(message.sid))
-//         .done();
-    
-//         client.messages
-//         .create({body: body, from: '+12562903890', to:to, messagingService: from})
-//         .then(message => console.log(message.sid))
-//         .done();
+    const body = requestBody.body;
+    console.log("requestBody: " + requestBody);
+    console.log("ExecutedaccountSid: " + accountSid);
+    console.log("ExecutedauthToken: " + authToken);
+    console.log("SubscriberKey: " + SubscriberKey);
+    console.log("EmailAddress: " + EmailAddress);
+    console.log("Executedfrom: " + from);
+    console.log("Executedbody: " + body);
+
+    //       const client = require('twilio')(accountSid, authToken);
+    //          client.messages
+    //         .create({body: body, from: '+12562903890', to: '+917869544724', messagingService: messagingService })
+    //         .then(message => console.log(message.sid))
+    //         .done();
+
+    //         client.messages
+    //         .create({body: body, from: '+12562903890', to:to, messagingService: from})
+    //         .then(message => console.log(message.sid))
+    //         .done();
 
 
-    const client = require('twilio')(accountSid, authToken);
-       client.messages
-       .create({body: body, from: '+12562903890', to: to, messagingService: from})
-       .then(message => console.log(message.sid))
-       .done();
-    
-    // FOR TESTING
-    logData(req);
-      res.send(200, 'Publish');
+    // const client = require('twilio')(accountSid, authToken);
+    //    client.messages
+    //    .create({body: body, from: '+12562903890', to: to, messagingService: from})
+    //    .then(message => console.log(message.sid))
+    //    .done();
+
+    // // FOR TESTING
+    // logData(req);
+    //   res.send(200, 'Publish');
 
     // Used to decode JWT
     // JWT(req.body, process.env.jwtSecret, (err, decoded) => {
@@ -148,6 +148,37 @@ exports.execute = function (req, res) {
     //         var decodedArgs = decoded.inArguments[0];
 
     //         logData(req);
+
+    //Journey Fire event
+
+    // Get Token
+
+    // Create JSON body for Fire event
+
+    const https = require('https');
+
+    https.get('https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token', res => {
+        let data = [];
+        const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
+        console.log('Status Code:', res.statusCode);
+        console.log('Date in Response header:', headerDate);
+
+        res.on('data', chunk => {
+            data.push(chunk);
+        });
+
+        res.on('end', () => {
+            console.log('Response ended: ');
+            const users = JSON.parse(Buffer.concat(data).toString());
+
+            for (user of users) {
+                console.log(`Got user with id: ${user.id}, name: ${user.name}`);
+            }
+        });
+    }).on('error', err => {
+        console.log('Error: ', err.message);
+    });
+
     res.send(200, 'Execute');
     //     } else {
     //         console.error('inArguments invalid.');
@@ -185,7 +216,7 @@ exports.validate = function (req, res) {
     console.log("3");
     console.log("2");
     console.log("1");
-   // console.log("Validated: "+req.body.inArguments[0]);   
+    // console.log("Validated: "+req.body.inArguments[0]);   
 
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
