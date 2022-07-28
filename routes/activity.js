@@ -248,8 +248,8 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         
-       // var body = JSON.stringify(response);
-       var body = JSON.parse(response);
+        var body = JSON.stringify(response);
+       //var body = JSON.parse(response);
         var resp = response.access_token;
        // console.log("tokenResponse" +resp);
        // var body2 = JSON.parse(response);
@@ -263,7 +263,7 @@ exports.validate = function (req, res) {
         console.log("body2.access_token"+body);
        // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
-        console.log("response.statusCode"+response.statusCode);
+        console.log("response.statusCode"+response);
         console.log("respresprespresp"+response.access_token);
     });
 
