@@ -20,7 +20,7 @@
                 }               
             ],
             "outArguments": [],
-            "url": "https://smstwilioca.herokuapp.com/check/execute",
+            "url": "https://restapica.herokuapp.com/check/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -31,7 +31,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "e7994b9c-0785-4378-8748-f4f4f8a68ba0",
        "save": {
-           "url": "https://smstwilioca.herokuapp.com/check/save",
+           "url": "https://restapica.herokuapp.com/check/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -39,7 +39,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://smstwilioca.herokuapp.com/check/publish",
+           "url": "https://restapica.herokuapp.com/check/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -47,7 +47,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://smstwilioca.herokuapp.com/check/validate",
+           "url": "https://restapica.herokuapp.com/check/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -55,7 +55,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://smstwilioca.herokuapp.com/check/stop",
+           "url": "https://restapica.herokuapp.com/check/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
