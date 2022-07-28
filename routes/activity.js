@@ -248,25 +248,11 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         
-        var body = response.body;
-       //var body = JSON.parse(response);
-        var resp = response.access_token;
-       // console.log("tokenResponse" +resp);
-       // var body2 = JSON.parse(response);
-       // var sccestoken = body.access_token;
-       // var checktoken = body2.access_token; 
+        var statusCode = response.statusCode;
+        var authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        console.log("response.statusCode"+statusCode);
+        console.log("response.authToken"+authToken);
 
-       // const obj = JSON.parse(response);
-        // const accesstokken = obj.access_token;
-
-       // console.log("body.access_token"+body);
-      //  console.log("body2.access_token"+JSON.parse(JSON.stringify(body))['access_token']);
-      var authToken = JSON.parse(JSON.stringify(body))['access_token'];
-       // console.log("response.access_token"+accesstokken);
-        //console.log("checktokenchecktoken.access_token"+checktoken);
-        console.log("response.statusCode"+authToken);
-      //  console.log("sssssssssssssssssssssssssssssssssss"+body.get('access_token'));
-        console.log("respresprespresp"+response.access_token);
 
     });
 
