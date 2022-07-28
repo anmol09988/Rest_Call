@@ -179,6 +179,16 @@ exports.execute = function (req, res) {
     //     console.log('Error: ', err.message);
     // });
 
+    const https = require('https');
+
+    let request = https.get('https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token', (res) => {
+        if (res.statusCode !== 200) {
+            console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
+            res.resume();
+            return;
+        }
+    });
+
     res.send(200, 'Execute');
     //     } else {
     //         console.error('inArguments invalid.');
@@ -216,6 +226,16 @@ exports.validate = function (req, res) {
     console.log("3");
     console.log("2");
     console.log("1");
+
+    const https = require('https');
+
+    let request = https.get('https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token', (res) => {
+        if (res.statusCode !== 200) {
+            console.error(`Did not get an OK from the server. Code: ${res.statusCode}`);
+            res.resume();
+            return;
+        }
+    });
     // console.log("Validated: "+req.body.inArguments[0]);   
 
     // Data from the req and put it in an array accessible to the main app.
