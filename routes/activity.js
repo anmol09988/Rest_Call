@@ -6,6 +6,8 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
+var authToken;
+
 exports.logExecuteData = [];
 
 function logData(req) {
@@ -249,11 +251,12 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
         
         var statusCode = response.statusCode;
-        var authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        console.log("sssssssssssssss"+authToken);
 
     if(statusCode === 200){
 
-        console.log("ddddddddddddddddddddddddddddddddd");
+        console.log("INIFLOOP");
     }
 
     });
