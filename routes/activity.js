@@ -248,7 +248,7 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         
-        var body = JSON.stringify(response.body);
+        var body = response.body;
        //var body = JSON.parse(response);
         var resp = response.access_token;
        // console.log("tokenResponse" +resp);
@@ -266,6 +266,7 @@ exports.validate = function (req, res) {
         console.log("response.statusCode"+response);
       //  console.log("sssssssssssssssssssssssssssssssssss"+body.get('access_token'));
         console.log("respresprespresp"+response.access_token);
+
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
