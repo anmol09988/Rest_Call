@@ -180,20 +180,18 @@ exports.execute = function (req, res) {
     // });
 
     var request = require('request');
-   // To post JSON data:
-    
     var myJSONObject = {
-                            "grant_type": "client_credentials",
-                            "client_id": "ewozgxquu4nriupcx2tylyfl",
-                            "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-                            "account_id": "526000739"
-                        };
+        "grant_type": "client_credentials",
+        "client_id": "ewozgxquu4nriupcx2tylyfl",
+        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+        "account_id": "526000739"
+    };
     request({
         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject
-    }, function (error, response, body){
+    }, function (error, response, body) {
         console.log(response);
     });
 
@@ -236,21 +234,22 @@ exports.validate = function (req, res) {
     console.log("1");
 
     var request = require('request');
-   // To post JSON data:
-    
+    // To post JSON data:
+
     var myJSONObject = {
-                            "grant_type": "client_credentials",
-                            "client_id": "ewozgxquu4nriupcx2tylyfl",
-                            "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-                            "account_id": "526000739"
-                        };
+        "grant_type": "client_credentials",
+        "client_id": "ewozgxquu4nriupcx2tylyfl",
+        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+        "account_id": "526000739"
+    };
     request({
         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject
-    }, function (error, response, body){
+    }, function (error, response, body) {
         console.log(response);
+        console.log("response.access_token"+response.access_token);
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
