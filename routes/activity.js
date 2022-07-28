@@ -250,6 +250,7 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
         console.log(response);
         console.log("response.access_token"+response.access_token);
+        console.log("response.statusCode"+response.statusCode);
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
