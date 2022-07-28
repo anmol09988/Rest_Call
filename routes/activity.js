@@ -249,6 +249,8 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         console.log("responseresponse"+response);
+        console.log("ssssssssssssssfdfff"+JSON.stringify(response.data));
+        console.log(JSON.stringify(response));
         console.log("response.access_token"+response.access_token);
         console.log("response.statusCode"+response.statusCode);
     });
