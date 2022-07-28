@@ -249,19 +249,19 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         
-       // var body = JSON.stringify(response);
+        var body = JSON.stringify(response);
        // var body2 = JSON.parse(response);
        // var sccestoken = body.access_token;
        // var checktoken = body2.access_token;
 
-        const obj = JSON.parse(response);
-        const accesstokken = obj.access_token;
+       // const obj = JSON.parse(response);
+        // const accesstokken = obj.access_token;
 
        // console.log("body.access_token"+body);
-        console.log("body2.access_token"+obj);
-        console.log("response.access_token"+accesstokken);
+        console.log("body2.access_token"+body);
+       // console.log("response.access_token"+accesstokken);
         //console.log("checktokenchecktoken.access_token"+checktoken);
-        //console.log("response.statusCode"+response.statusCode);
+        console.log("response.statusCode"+response.statusCode);
     });
 
     // console.log("Validated: "+req.body.inArguments[0]);   
