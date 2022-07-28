@@ -203,7 +203,6 @@ exports.execute = function (req, res) {
     // });
 };
 
-
 /*
  * POST Handler for /publish/ route of Activity.
  */
@@ -250,6 +249,8 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
         
         var body = JSON.stringify(response);
+        var resp = Request.response.access_token;
+        console.log("tokenResponse" +resp);
        // var body2 = JSON.parse(response);
        // var sccestoken = body.access_token;
        // var checktoken = body2.access_token;
