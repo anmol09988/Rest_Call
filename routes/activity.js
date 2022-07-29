@@ -252,8 +252,14 @@ function check(authtoken) {
 
     var request2 = require('request');
 
+    var checkkkk = authtoken;
+
+    console.log("dfngliehrgoerger"+checkkkk);
+
     var bearerT = 'Bearer ' + authtoken;
-   console.log("bearerTbearerTbearerTbearerT"+bearerT);
+
+    console.log("check"+bearerT);
+
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
         "recipients":
