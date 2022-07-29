@@ -254,25 +254,26 @@ function check(req, res) {
 
     var request2 = require('request');
 
-    console.log("sddddddddddefwgrwr"+authToken);
+    console.log("sddddddddddefwgrwr" + authToken);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
         "recipients":
-        [
-            {
-                "contactKey": "anmol.shrivastava@v2force.com",
-                "to": "anmol.shrivastava@v2force.com"
-            }
-        ]
+            [
+                {
+                    "contactKey": "anmol.shrivastava@v2force.com",
+                    "to": "anmol.shrivastava@v2force.com"
+                }
+            ]
     };
 
     request2({
         headers: {
-            'Authorization': 'Bearer' +authToken,
+            'Authorization': 'Bearer' + authToken,
             'Content-Type': 'application/json'
         },
-        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+        //url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+        url: "https://jsonplaceholder.typicode.com/users?_limit=2",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
