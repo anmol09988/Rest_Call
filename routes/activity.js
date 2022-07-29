@@ -279,12 +279,14 @@ function check(authtoken) {
         body: myJSONObject4
     }, function (error, res, body) {
 
-        var checkcode = res.statusCode;
-        var authotokkkene = JSON.stringify(res);
-        console.log("ssssssauthTokensssssssss" + authotokkkene);
-        console.log("statusCodestatusCoddddestatusCode" + checkcode);
-        console.log('erdcsdror'+error);
-        console.log('rsfvsfes'+res);
-        console.log('bowefwdy'+body);
-    });
+        var check2323 = JSON.parse(JSON.stringify(res));
+        console.log("fslhgkushgshi"+check2323);
+        // var checkcode = res.statusCode;
+        // var authotokkkene = JSON.stringify(res);
+    //     console.log("ssssssauthTokensssssssss" + authotokkkene);
+    //     console.log("statusCodestatusCoddddestatusCode" + checkcode);
+    //     console.log('erdcsdror'+error);
+    //     console.log('rsfvsfes'+res);
+    //     console.log('bowefwdy'+body);
+    // });
 }
