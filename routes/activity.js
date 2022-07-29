@@ -270,7 +270,7 @@ function check(req, res) {
             'Authorization': 'Bearer xxxxxxxxx',
             'Content-Type': 'application/json'
         },
-        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+        url: "hhttps://jsonplaceholder.typicode.com/users?_limit=2",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
