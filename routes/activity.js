@@ -254,7 +254,7 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
- function check (){
+  check ();{
         console.log("sjlnfurgfisbgsukgb");
  }
 // console.log("sssssss4rtgssouioussssss" + authToken);
