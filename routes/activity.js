@@ -246,23 +246,17 @@ exports.validate = function (req, res) {
 
     });
 
-
-
     var request2 = require('request');
     // To post JSON data:
 
     var myJSONObject2 = {
-        "definitionKey": "API_Test_1234",
-        "recipients": 
-        [
-            {
-                "contactKey": "anmol.shrivastava@v2force.com",
-                "to": "anmol.shrivastava@v2force.com"
-            }
-        ]
+        "grant_type": "client_credentials",
+        "client_id": "ewozgxquu4nriupcx2tylyfl",
+        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+        "account_id": "526000739"
     };
     request2({
-        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject2
