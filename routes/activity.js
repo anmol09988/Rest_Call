@@ -239,7 +239,8 @@ exports.validate = function (req, res) {
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check.call(authToken);
+            // check.call(authToken);
+            check(authToken);
         }
         console.log("statusCode" + statusCode);
         console.log("authToken" + authToken);
@@ -250,7 +251,7 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
-function check(req, res) {
+function check(authtoken) {
 
     var request2 = require('request');
 
@@ -269,7 +270,7 @@ function check(req, res) {
 
     request2({
         headers: {
-            'Authorization': 'Bearer' + authToken,
+            'Authorization': 'Bearer ' + authToken,
             'Content-Type': 'application/json'
         },
         //url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
