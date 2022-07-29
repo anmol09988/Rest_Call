@@ -252,9 +252,9 @@ function check(authtoken) {
 
     var request2 = require('request');
 
-    var auth =  authtoken;
+    var bearerT = 'Bearer ' +authtoken;
 
-    console.log("sddddddddddefwgrwr" + auth);
+    console.log("sddddddddddefwgrwr" + bearerT);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
