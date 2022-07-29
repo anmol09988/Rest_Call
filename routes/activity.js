@@ -262,7 +262,7 @@ exports.validate = function (req, res) {
         body: myJSONObject2
     }, function (error, response2, body) {
 
-        wtatusCode = response.statusCode;
+        wtatusCode = response2.statusCode;
         //wtatusCode = JSON.parse(JSON.stringify(response.body));
         //console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + wtatusCode);
         console.log("safjbgdkibgsf" + wtatusCode);
