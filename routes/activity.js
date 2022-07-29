@@ -240,7 +240,7 @@ exports.validate = function (req, res) {
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-        
+
             check.call();
 
         }
@@ -256,7 +256,7 @@ exports.validate = function (req, res) {
 };
 // console.log("sssssss4rtgssouioussssss" + authToken);
 
-function check (req,res){
+function check(req, res) {
 
     var request2 = require('request');
 
@@ -273,16 +273,9 @@ function check (req,res){
         body: myJSONObject4
     }, function (error, response, body) {
 
-        checkcode = response.statusCode;
+       var checkcode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("ssssssauthTokensssssssss" + authToken);
-
-        if (statusCode === 200) {
-            console.log("INIFLOOP");
-        
-            check.call();
-
-        }
         console.log("statusCodestatusCodestatusCode" + checkcode);
         console.log("authTokenauthTokenauthToken" + authToken);
 
