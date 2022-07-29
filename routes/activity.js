@@ -277,11 +277,14 @@ function check(authtoken) {
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
-    }, function checrt (error, res, body) {
+    }, function (error, res, body) {
 
         var checkcode = res.statusCode;
         var authotokkkene = JSON.stringify(res);
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
+        console.log('error'+error);
+        console.log('res'+res);
+        console.log('body'+body);
     });
 }
