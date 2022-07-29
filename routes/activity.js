@@ -246,7 +246,7 @@ exports.validate = function (req, res) {
 
     });
 
-    var request2 = require('request');
+    var request = require('request');
     // To post JSON data:
 
     var myJSONObject2 = {
@@ -255,17 +255,17 @@ exports.validate = function (req, res) {
         "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
         "account_id": "526000739"
     };
-    request2({
+    request({
         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject2
-    }, function (error, response, body) {
+    }, function (error, response2, body) {
 
         wtatusCode = response.statusCode;
         //wtatusCode = JSON.parse(JSON.stringify(response.body));
         //console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + wtatusCode);
-        console.log("safjbgdkibgsf" + statusCode);
+        console.log("safjbgdkibgsf" + wtatusCode);
 
     });
 
