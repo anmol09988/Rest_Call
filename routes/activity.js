@@ -239,9 +239,7 @@ exports.validate = function (req, res) {
        
         if (statusCode === 200) {
             console.log("INIFLOOP");
-
             check.call();
-
         }
         console.log("statusCode" + statusCode);
         console.log("authToken" + authToken);
@@ -268,6 +266,10 @@ function check(req, res) {
     };
 
     request2({
+        headers: {
+            'Authorization': 'Bearer xxxxxxxxx',
+            'Content-Type': 'application/json'
+          },
         url: "https://jsonplaceholder.typicode.com/users?_limit=2",
         method: "POST",
         json: true,   // <--Very important!!!
