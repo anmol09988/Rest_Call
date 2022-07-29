@@ -267,6 +267,9 @@ function check(req, res) {
         ]
     };
 
+    var bearerT = 'Bearer ' +authToken;
+    console.log("bearerTbearerT"+bearerT);
+
     request2({
         headers: {
             'Authorization': 'Bearer xxxxxxxxx',
