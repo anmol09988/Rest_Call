@@ -256,7 +256,9 @@ function check(req, res) {
     var request2 = require('request');
 
     console.log("sddddddddddefwgrwr"+authToken);
+    var chcek = authToken;
     console.log('checkececcheckecec'+checkecec);
+    console.log("ddddddddddddddddddddddddddddddddddddddddddddd"+chcek);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
