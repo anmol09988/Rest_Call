@@ -242,9 +242,6 @@ exports.validate = function (req, res) {
             // check.call(authToken);
             check(authToken);
         }
-        console.log("statusCode" + statusCode);
-        console.log("authToken" + authToken);
-
     });
 
     logData(req);
@@ -255,7 +252,9 @@ function check(authtoken) {
 
     var request2 = require('request');
 
-    console.log("sddddddddddefwgrwr" + authToken);
+    var auth =  authtoken;
+
+    console.log("sddddddddddefwgrwr" + auth);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
