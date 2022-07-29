@@ -239,7 +239,7 @@ exports.validate = function (req, res) {
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check.call();
+            check.call(authToken);
         }
         console.log("statusCode" + statusCode);
         console.log("authToken" + authToken);
@@ -253,6 +253,8 @@ exports.validate = function (req, res) {
 function check(req, res) {
 
     var request2 = require('request');
+
+    console.log("sddddddddddefwgrwr"+authToken);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
