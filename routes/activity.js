@@ -270,8 +270,8 @@ exports.validate = function (req, res) {
 
      
 
-        console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
-        console.log("sssssss4rtgssssssss" + authToken);
+        console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + statusCode);
+        console.log("safjbgdkibgsf" + authToken);
 
     });
 
