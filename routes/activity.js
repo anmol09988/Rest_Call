@@ -236,11 +236,10 @@ exports.validate = function (req, res) {
 
         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        var checkecec = 'this is c=working'
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check.call(authToken, checkecec);
+            check.call(authToken);
         }
         console.log("statusCode" + statusCode);
         console.log("authToken" + authToken);
@@ -256,7 +255,6 @@ function check(req, res) {
     var request2 = require('request');
 
     console.log("sddddddddddefwgrwr"+authToken);
-    var chcek = authToken;
     console.log('checkececcheckecec'+checkecec);
     console.log("ddddddddddddddddddddddddddddddddddddddddddddd"+chcek);
 
@@ -273,6 +271,9 @@ function check(req, res) {
 
     var bearerT = 'Bearer ' +authToken;
     console.log("bearerTbearerT"+bearerT);
+
+    var thiss = this.access_token;
+    console.log("ddddddddddddddddddddddddddd"+thiss);
 
     request2({
         headers: {
