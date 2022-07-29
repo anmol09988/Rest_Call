@@ -221,7 +221,7 @@ exports.validate = function (req, res) {
 
     var request = require('request');
     // To post JSON data:
-    
+
     var myJSONObject2 = {
         "grant_type": "client_credentials",
         "client_id": "ewozgxquu4nriupcx2tylyfl",
@@ -239,48 +239,25 @@ exports.validate = function (req, res) {
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssssssss" + authToken);
 
-     
+
 
         console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
         console.log("sssssss4rtgssssssss" + authToken);
 
     });
 
+    const axios = require("axios")
 
-    var request = require('request');
-    // To post JSON data:
-
-    var myJSONObject = {
+    axios.post("https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token", {
         "grant_type": "client_credentials",
         "client_id": "ewozgxquu4nriupcx2tylyfl",
         "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
         "account_id": "526000739"
-    };
-    request({
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
-        method: "POST",
-        json: true,   // <--Very important!!!
-        body: myJSONObject
-    }, function (error, response, body) {
-
-        statusCode = response.statusCode;
-        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        console.log("ssssssssssxxxxxscssssss" + authToken);
-
-     
-
-        console.log("aaaaaaaaaadaewefvdfrwdddddddddddddddddddddddffffff" + statusCode);
-        console.log("ssweefsssss4rtgssssssss" + authToken);
-
-    });
-
-//    console.log("aaaaaaaaaadajkloewerwdddddddddddddddddddddddffffff" + statusCode);
-//    console.log("sssssss4rtioiguygssssssss" + authToken);
-
-    // console.log("Validated: "+req.body.inArguments[0]);   
-
-    // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    }).then(function (response) {
+        console.log("sddd"+response.data)
+    }).catch(function (error) {
+        console.log("error"+error)
+    })
     logData(req);
     res.send(200, 'Validate');
 };
