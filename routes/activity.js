@@ -246,10 +246,11 @@ exports.validate = function (req, res) {
 
     });
 
+
     var request = require('request');
     // To post JSON data:
 
-    var myJSONObject2 = {
+    var myJSONObject = {
         "grant_type": "client_credentials",
         "client_id": "ewozgxquu4nriupcx2tylyfl",
         "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
@@ -259,13 +260,17 @@ exports.validate = function (req, res) {
         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
         method: "POST",
         json: true,   // <--Very important!!!
-        body: myJSONObject2
-    }, function (error, response2, body) {
+        body: myJSONObject
+    }, function (error, response, body) {
 
-        wtatusCode = response2.statusCode;
-        //wtatusCode = JSON.parse(JSON.stringify(response.body));
-        //console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + wtatusCode);
-        console.log("safjbgdkibgsf" + wtatusCode);
+        statusCode = response.statusCode;
+        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        console.log("ssssssssssxxxxxscssssss" + authToken);
+
+     
+
+        console.log("aaaaaaaaaadaewefvdfrwdddddddddddddddddddddddffffff" + statusCode);
+        console.log("ssweefsssss4rtgssssssss" + authToken);
 
     });
 
