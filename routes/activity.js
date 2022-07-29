@@ -235,7 +235,7 @@ exports.validate = function (req, res) {
         body: myJSONObject
     }, function (error, response, body) {
         
-        var statusCode = response.statusCode;
+         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssssssss"+authToken);
 
@@ -248,6 +248,7 @@ exports.validate = function (req, res) {
 
 
     console.log("aaaaaaaaaaddddddddddddddddddddddddffffff"+statusCode);
+    console.log("sssssssssssssss"+authToken);
     
 
     // console.log("Validated: "+req.body.inArguments[0]);   
