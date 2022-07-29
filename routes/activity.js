@@ -255,8 +255,6 @@ function check(req, res) {
     var request2 = require('request');
 
     console.log("sddddddddddefwgrwr"+authToken);
-    console.log('checkececcheckecec'+checkecec);
-    console.log("ddddddddddddddddddddddddddddddddddddddddddddd"+chcek);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
@@ -269,23 +267,12 @@ function check(req, res) {
         ]
     };
 
-    var bearerT = 'Bearer ' +(authToken);
-    const str1 = 'dddddd';
-
-    const newString = str1.concat(authToken);
-
-    console.log("bearerTbearerT"+bearerT);
-    console.log("djksbfbsofbsdof"+newString);
-
-    var thiss = this.authToken;
-    console.log("ddddddddddddddddddddddddddd"+thiss);
-
     request2({
         headers: {
-            'Authorization': 'Bearer xxxxxxxxx',
+            'Authorization': 'Bearer' +authToken,
             'Content-Type': 'application/json'
         },
-        url: "hhttps://jsonplaceholder.typicode.com/users?_limit=2",
+        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
