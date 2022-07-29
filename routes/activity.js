@@ -253,6 +253,7 @@ exports.validate = function (req, res) {
         var statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssssssss"+authToken);
+        console.log("checkssss"+JSON.stringify(response));
 
     if(statusCode === 200){
 
@@ -260,6 +261,7 @@ exports.validate = function (req, res) {
     }
 
     });
+    
 
     // console.log("Validated: "+req.body.inArguments[0]);   
 
