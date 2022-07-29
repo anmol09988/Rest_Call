@@ -283,8 +283,8 @@ function check(authtoken) {
         var authotokkkene = JSON.stringify(res);
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
-        console.log('error'+error);
-        console.log('res'+res);
-        console.log('body'+body);
+        console.log('erdcsdror'+error);
+        console.log('rsfvsfes'+res);
+        console.log('bowefwdy'+body);
     });
 }
