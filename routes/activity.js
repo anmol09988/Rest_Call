@@ -272,7 +272,7 @@ function check(req, res) {
     var bearerT = 'Bearer ' +authToken;
     console.log("bearerTbearerT"+bearerT);
 
-    var thiss = this.access_token;
+    var thiss = this.authToken;
     console.log("ddddddddddddddddddddddddddd"+thiss);
 
     request2({
