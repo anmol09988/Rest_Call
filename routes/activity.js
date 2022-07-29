@@ -269,8 +269,13 @@ function check(req, res) {
         ]
     };
 
-    var bearerT = 'Bearer ' +authToken;
+    var bearerT = 'Bearer ' +(authToken);
+    const str1 = 'dddddd';
+
+    const newString = str1.concat(authToken);
+
     console.log("bearerTbearerT"+bearerT);
+    console.log("djksbfbsofbsdof"+newString);
 
     var thiss = this.authToken;
     console.log("ddddddddddddddddddddddddddd"+thiss);
