@@ -274,7 +274,7 @@ function check(req, res) {
     }, function (error, res, body) {
 
        var checkcode = res.statusCode;
-        authotokkkene = JSON.parse(JSON.stringify(res.body))['access_token'];
+       var  authotokkkene = JSON.parse(JSON.stringify(res.body))['access_token'];
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
        // console.log("authTokenauthTokenauthToken" + authToken);
