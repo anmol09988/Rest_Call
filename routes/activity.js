@@ -265,7 +265,7 @@ exports.validate = function (req, res) {
     }, function (error, response, body) {
 
         statusCode = response.statusCode;
-        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+       // authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssdddssssss" + authToken);
 
      
