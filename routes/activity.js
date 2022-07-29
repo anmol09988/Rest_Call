@@ -236,8 +236,7 @@ exports.validate = function (req, res) {
 
         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        console.log("ssssssauthTokensssssssss" + authToken);
-
+       
         if (statusCode === 200) {
             console.log("INIFLOOP");
 
@@ -249,12 +248,9 @@ exports.validate = function (req, res) {
 
     });
 
-    console.log("dddddddjfnkdjfndfjkfndkjf");
-
     logData(req);
     res.send(200, 'Validate');
 };
-// console.log("sssssss4rtgssouioussssss" + authToken);
 
 function check(req, res) {
 
@@ -274,7 +270,7 @@ function check(req, res) {
     }, function (error, res, body) {
 
        var checkcode = res.statusCode;
-       var  authotokkkene = JSON.parse(JSON.stringify(res.body))['access_token'];
+       var authotokkkene = JSON.parse(JSON.stringify(res.body))['access_token'];
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
        // console.log("authTokenauthTokenauthToken" + authToken);
