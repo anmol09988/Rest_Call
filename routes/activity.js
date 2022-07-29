@@ -241,9 +241,7 @@ exports.validate = function (req, res) {
         if (statusCode === 200) {
             console.log("INIFLOOP");
 
-
-
-
+                this.check();
         }
         console.log("statusCodestatusCodestatusCode" + statusCode);
         console.log("authTokenauthTokenauthToken" + authToken);
@@ -256,6 +254,8 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
- console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff");
+ function check (){
+        console.log("sjlnfurgfisbgsukgb");
+ }
 // console.log("sssssss4rtgssouioussssss" + authToken);
 
