@@ -242,6 +242,8 @@ exports.validate = function (req, res) {
             console.log("INIFLOOP");
 
 
+
+
         }
         console.log("statusCodestatusCodestatusCode" + statusCode);
         console.log("authTokenauthTokenauthToken" + authToken);
@@ -254,5 +256,6 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
-// console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff" + statusCode);
+ console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff");
 // console.log("sssssss4rtgssouioussssss" + authToken);
+
