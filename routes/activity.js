@@ -271,12 +271,12 @@ function check(req, res) {
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
-    }, function (error, response, body) {
+    }, function (error, res, body) {
 
-       var checkcode = response.statusCode;
-        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+       var checkcode = res.statusCode;
+        authToken = JSON.parse(JSON.stringify(res.body))['access_token'];
         console.log("ssssssauthTokensssssssss" + authToken);
-        console.log("statusCodestatusCodestatusCode" + checkcode);
+        console.log("statusCodestatusCoddddestatusCode" + checkcode);
         console.log("authTokenauthTokenauthToken" + authToken);
 
     });
