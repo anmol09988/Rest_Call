@@ -252,13 +252,9 @@ function check(authtoken) {
 
     var request2 = require('request');
 
-    var checkkkk = authtoken;
-
-    console.log("dfngliehrgoerger"+checkkkk);
-
     var bearerT = 'Bearer ' + authtoken;
 
-    console.log("check"+bearerT);
+    console.log("check" + bearerT);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
@@ -277,11 +273,11 @@ function check(authtoken) {
             'Content-Type': 'application/json'
         },
         url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
-         url: "https://jsonplaceholder.typicode.com/users?_limit=2",
+        // url: "https://jsonplaceholder.typicode.com/users?_limit=2",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
-    }, function (error, res, body) {
+    }, function checrt (error, res, body) {
 
         var checkcode = res.statusCode;
         var authotokkkene = JSON.stringify(res);
