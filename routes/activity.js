@@ -244,8 +244,8 @@ exports.validate = function (req, res) {
             check.call();
 
         }
-        console.log("statusCodestatusCodestatusCode" + statusCode);
-        console.log("authTokenauthTokenauthToken" + authToken);
+        console.log("statusCode" + statusCode);
+        console.log("authToken" + authToken);
 
     });
 
@@ -274,10 +274,10 @@ function check(req, res) {
     }, function (error, res, body) {
 
        var checkcode = res.statusCode;
-        authToken = JSON.parse(JSON.stringify(res.body))['access_token'];
-        console.log("ssssssauthTokensssssssss" + authToken);
+        authotokkkene = JSON.parse(JSON.stringify(res.body))['access_token'];
+        console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
-        console.log("authTokenauthTokenauthToken" + authToken);
+       // console.log("authTokenauthTokenauthToken" + authToken);
 
     });
 
