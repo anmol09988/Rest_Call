@@ -242,24 +242,25 @@ exports.validate = function (req, res) {
         if(statusCode === 200){
             console.log("INIFLOOP");
 
+            const axios = require("axios")
+
+            axios.post("https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token", {
+                "grant_type": "client_credentials",
+                "client_id": "ewozgxquu4nriupcx2tylyfl",
+                "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+                "account_id": "526000739"
+            }).then(function (response) {
+                console.log("sddd"+response.data)
+            }).catch(function (error) {
+                console.log("error"+error)
+            })
+
         }
         console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
         console.log("sssssss4rtgssssssss" + authToken);
 
     });
 
-    const axios = require("axios")
-
-    axios.post("https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token", {
-        "grant_type": "client_credentials",
-        "client_id": "ewozgxquu4nriupcx2tylyfl",
-        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-        "account_id": "526000739"
-    }).then(function (response) {
-        console.log("sddd"+response.data)
-    }).catch(function (error) {
-        console.log("error"+error)
-    })
     logData(req);
     res.send(200, 'Validate');
 };
