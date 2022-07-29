@@ -6,8 +6,8 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
-var authToken;
-var statusCode;
+ authToken;
+ statusCode;
 
 exports.logExecuteData = [];
 
@@ -249,8 +249,8 @@ exports.validate = function (req, res) {
 
     });
 
-   // console.log("aaaaaaaaaadajkloewerwdddddddddddddddddddddddffffff" + statusCode);
-   // console.log("sssssss4rtioiguygssssssss" + authToken);
+    console.log("aaaaaaaaaadajkloewerwdddddddddddddddddddddddffffff" + statusCode);
+    console.log("sssssss4rtioiguygssssssss" + authToken);
 
     // console.log("Validated: "+req.body.inArguments[0]);   
 
@@ -260,5 +260,5 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
-// console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff" + statusCode);
-// console.log("sssssss4rtgssouioussssss" + authToken);
+ console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff" + statusCode);
+ console.log("sssssss4rtgssouioussssss" + authToken);
