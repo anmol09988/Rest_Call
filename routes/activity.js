@@ -220,7 +220,6 @@ exports.validate = function (req, res) {
     console.log("1");
 
     var request = require('request');
-    // To post JSON data:
 
     var myJSONObject2 = {
         "grant_type": "client_credentials",
@@ -237,16 +236,19 @@ exports.validate = function (req, res) {
 
         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        console.log("sssssssssssssss" + authToken);
+        console.log("ssssssauthTokensssssssss" + authToken);
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
 
+
         }
-        console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
-        console.log("sssssss4rtgssssssss" + authToken);
+        console.log("statusCodestatusCodestatusCode" + statusCode);
+        console.log("authTokenauthTokenauthToken" + authToken);
 
     });
+
+    console.log("dddddddjfnkdjfndfjkfndkjf");
 
     logData(req);
     res.send(200, 'Validate');
