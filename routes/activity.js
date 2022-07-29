@@ -239,8 +239,28 @@ exports.validate = function (req, res) {
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssssssss" + authToken);
 
+        if(statusCode === 200){
+            console.log("INIFLOOP");
 
+            var request = require('request');
+    // To post JSON data:
 
+    var myJSONObject2 = {
+        "grant_type": "client_credentials",
+        "client_id": "ewozgxquu4nriupcx2tylyfl",
+        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+        "account_id": "526000739"
+    };
+
+    request({
+        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+        method: "POST",
+        json: true,   // <--Very important!!!
+        body: myJSONObject2
+      
+    },)
+    console.log("dddddddddddddddddddddds");
+        }
         console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
         console.log("sssssss4rtgssssssss" + authToken);
 
