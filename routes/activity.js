@@ -257,6 +257,9 @@ exports.validate = function (req, res) {
 // console.log("sssssss4rtgssouioussssss" + authToken);
 
 function check (req,res){
+
+    console.log("dkdnjfbkdbf"+statusCode);
+    console.log("fetyhdhd"+authToken);
     console.log('cccccccccddddddddddddddfdfdf');
 }
 
