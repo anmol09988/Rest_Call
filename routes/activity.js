@@ -244,6 +244,9 @@ exports.validate = function (req, res) {
         console.log("INIFLOOP");
     }
 
+    console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff"+statusCode);
+    console.log("sssssss4rtgssssssss"+authToken);
+
     });
 
 
@@ -258,3 +261,7 @@ exports.validate = function (req, res) {
     logData(req);
     res.send(200, 'Validate');
 };
+
+console.log("aaaaaaaaaadsssssswwwwwwdddddddddddddddddddddddffffff"+statusCode);
+    console.log("ssssssfffffffsssssssss"+authToken);
+    
