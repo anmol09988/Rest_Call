@@ -268,8 +268,8 @@ exports.validate = function (req, res) {
         body: myJSONObject2
     }, function (error, response, body) {
 
-        wtatusCode = response.statusCode;
-       // authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        //wtatusCode = response.statusCode;
+        wtatusCode = JSON.parse(JSON.stringify(response.body));
         console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + wtatusCode);
         console.log("safjbgdkibgsf" + authToken);
 
