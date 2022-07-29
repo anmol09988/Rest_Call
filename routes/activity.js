@@ -6,7 +6,7 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
-global.authToken;
+var authToken;
 var statusCode;
 
 exports.logExecuteData = [];
@@ -234,23 +234,23 @@ exports.validate = function (req, res) {
         json: true,   // <--Very important!!!
         body: myJSONObject
     }, function (error, response, body) {
-        
+
         statusCode = response.statusCode;
-        global.authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        console.log("sssssssssssssss"+authToken);
+        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        console.log("sssssssssssssss" + authToken);
 
-    if(statusCode === 200){
+        if (statusCode === 200) {
 
-        console.log("INIFLOOP");
-    }
+            console.log("INIFLOOP");
+        }
 
-    console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff"+statusCode);
-    console.log("sssssss4rtgssssssss"+authToken);
+        console.log("aaaaaaaaaadaewerwdddddddddddddddddddddddffffff" + statusCode);
+        console.log("sssssss4rtgssssssss" + authToken);
 
     });
 
-    console.log("aaaaaaaaaadajkloewerwdddddddddddddddddddddddffffff"+statusCode);
-    console.log("sssssss4rtioiguygssssssss"+authToken);
+   // console.log("aaaaaaaaaadajkloewerwdddddddddddddddddddddddffffff" + statusCode);
+   // console.log("sssssss4rtioiguygssssssss" + authToken);
 
     // console.log("Validated: "+req.body.inArguments[0]);   
 
@@ -260,5 +260,5 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
-console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff"+statusCode);
-    console.log("sssssss4rtgssouioussssss"+authToken);
+// console.log("aaaaaaaaaadaewerwddddewruodddddddddddddddddddffffff" + statusCode);
+// console.log("sssssss4rtgssouioussssss" + authToken);
