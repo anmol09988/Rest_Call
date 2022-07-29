@@ -258,8 +258,8 @@ exports.validate = function (req, res) {
 
 function check (req,res){
 
-    console.log("dkdnjfbkdbf"+statusCode);
-    console.log("fetyhdhd"+authToken);
+    console.log("dkdnjfbkdbf");
+    console.log("fetyhdhd");
     console.log('cccccccccddddddddddddddfdfdf');
 }
 
