@@ -236,7 +236,7 @@ exports.validate = function (req, res) {
 
         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-       
+
         if (statusCode === 200) {
             console.log("INIFLOOP");
             check.call();
@@ -256,7 +256,7 @@ function check(req, res) {
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
-        "recipients": 
+        "recipients":
         [
             {
                 "contactKey": "anmol.shrivastava@v2force.com",
@@ -269,20 +269,16 @@ function check(req, res) {
         headers: {
             'Authorization': 'Bearer xxxxxxxxx',
             'Content-Type': 'application/json'
-          },
-        url: "https://jsonplaceholder.typicode.com/users?_limit=2",
+        },
+        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
     }, function (error, res, body) {
 
-       var checkcode = res.statusCode;
-       var authotokkkene = JSON.parse(JSON.stringify(res));
+        var checkcode = res.statusCode;
+        var authotokkkene = JSON.parse(JSON.stringify(res));
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
-       // console.log("authTokenauthTokenauthToken" + authToken);
-
     });
-
 }
-
