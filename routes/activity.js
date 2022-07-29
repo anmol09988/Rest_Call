@@ -252,10 +252,7 @@ function check(authtoken) {
 
     var request2 = require('request');
 
-    var bearerT = 'Bearer ' +authtoken;
-
-    console.log("sddddddddddefwgrwr" + bearerT);
-
+    var bearerT = 'Bearer ' + authtoken;
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
         "recipients":
@@ -269,19 +266,19 @@ function check(authtoken) {
 
     request2({
         headers: {
-            'Authorization': 'Bearer ' + authToken,
+            'Authorization': bearerT,
             'Content-Type': 'application/json'
         },
         url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
-       // url: "https://jsonplaceholder.typicode.com/users?_limit=2",
+        // url: "https://jsonplaceholder.typicode.com/users?_limit=2",
         method: "POST",
         json: true,   // <--Very important!!!
         body: myJSONObject4
     }, function (error, res, body) {
 
-       // var checkcode = res.statusCode;
+        // var checkcode = res.statusCode;
         var authotokkkene = JSON.stringify(res);
         console.log("ssssssauthTokensssssssss" + authotokkkene);
-       // console.log("statusCodestatusCoddddestatusCode" + checkcode);
+        // console.log("statusCodestatusCoddddestatusCode" + checkcode);
     });
 }
