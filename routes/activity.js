@@ -251,26 +251,26 @@ exports.validate = function (req, res) {
     var request2 = require('request');
     // To post JSON data:
 
-    var myJSONObject = {
-        "grant_type": "client_credentials",
-        "client_id": "ewozgxquu4nriupcx2tylyfl",
-        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-        "account_id": "526000739"
+    var myJSONObject2 = {
+        "definitionKey": "API_Test_1234",
+        "recipients": 
+        [
+            {
+                "contactKey": "anmol.shrivastava@v2force.com",
+                "to": "anmol.shrivastava@v2force.com"
+            }
+        ]
     };
     request2({
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+        url: "https:///mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
         method: "POST",
         json: true,   // <--Very important!!!
-        body: myJSONObject
+        body: myJSONObject2
     }, function (error, response, body) {
 
-        statusCode = response.statusCode;
+        wtatusCode = response.statusCode;
        // authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
-        console.log("sssssssssdddssssss" + authToken);
-
-     
-
-        console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + statusCode);
+        console.log("aaaaaaaaadfskhbfkbsadaewerwdddddddddddddddddddddddffffff" + wtatusCode);
         console.log("safjbgdkibgsf" + authToken);
 
     });
