@@ -280,7 +280,7 @@ function check(req, res) {
     }, function (error, res, body) {
 
         var checkcode = res.statusCode;
-        var authotokkkene = JSON.parse(JSON.stringify(res));
+        var authotokkkene = JSON.stringify(res);
         console.log("ssssssauthTokensssssssss" + authotokkkene);
         console.log("statusCodestatusCoddddestatusCode" + checkcode);
     });
