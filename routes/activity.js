@@ -7,6 +7,7 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
 var authToken;
+var statusCode;
 
 exports.logExecuteData = [];
 
@@ -181,22 +182,6 @@ exports.execute = function (req, res) {
     //     console.log('Error: ', err.message);
     // });
 
-    var request = require('request');
-    var myJSONObject = {
-        "grant_type": "client_credentials",
-        "client_id": "ewozgxquu4nriupcx2tylyfl",
-        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-        "account_id": "526000739"
-    };
-    request({
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
-        method: "POST",
-        json: true,   // <--Very important!!!
-        body: myJSONObject
-    }, function (error, response, body) {
-        console.log(response);
-    });
-
     res.send(200, 'Execute');
     //     } else {
     //         console.error('inArguments invalid.');
@@ -253,7 +238,6 @@ exports.validate = function (req, res) {
         var statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
         console.log("sssssssssssssss"+authToken);
-        console.log("checkssss"+JSON.stringify(response));
 
     if(statusCode === 200){
 
@@ -261,6 +245,9 @@ exports.validate = function (req, res) {
     }
 
     });
+
+
+    console.log("aaaaaaaaaaddddddddddddddddddddddddffffff"+statusCode);
     
 
     // console.log("Validated: "+req.body.inArguments[0]);   
