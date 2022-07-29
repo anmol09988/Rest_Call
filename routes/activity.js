@@ -236,10 +236,11 @@ exports.validate = function (req, res) {
 
         statusCode = response.statusCode;
         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        var checkecec = 'this is c=working'
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check.call(authToken);
+            check.call(authToken, checkecec);
         }
         console.log("statusCode" + statusCode);
         console.log("authToken" + authToken);
@@ -255,6 +256,7 @@ function check(req, res) {
     var request2 = require('request');
 
     console.log("sddddddddddefwgrwr"+authToken);
+    console.log('checkececcheckecec'+checkecec);
 
     var myJSONObject4 = {
         "definitionKey": "API_Test_1234",
