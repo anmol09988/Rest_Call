@@ -114,67 +114,69 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
 
-    
-//     var request = require('request');
-//     var myJSONObject2 = {
-//         "grant_type": "client_credentials",
-//         "client_id": "ewozgxquu4nriupcx2tylyfl",
-//         "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-//         "account_id": "526000739"
-//     };
-//     request({
-//         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
-//         method: "POST",
-//         json: true,   // <--Very important!!!
-//         body: myJSONObject2
-//     }, function (error, response, body) {
 
-//         statusCode = response.statusCode;
-//         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        var request = require('request');
+        var myJSONObject2 = {
+            "grant_type": "client_credentials",
+            "client_id": "ewozgxquu4nriupcx2tylyfl",
+            "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+            "account_id": "526000739"
+        };
+        request({
+            url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+            method: "POST",
+            json: true,   // <--Very important!!!
+            body: myJSONObject2
+        }, function (error, response, body) {
 
-//         if (statusCode === 200) {
-//             console.log("INIFLOOP");
-//             check(authToken);
-//         }
-//     });
+            statusCode = response.statusCode;
+            authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
-//     logData(req);
-//     res.send(200, 'Validate');
-// };
+            if (statusCode === 200) {
+                console.log("INIFLOOP");
+                check(authToken);
+            }
+        });
 
-// function check(authtoken) {
+        logData(req);
+        res.send(200, 'Validate');
+    };
 
-//     var request2 = require('request');
+    function check(authtoken) {
 
-//     var bearerT = 'Bearer ' + authtoken;
+        var request2 = require('request');
 
-//     console.log("check" + bearerT);
+        var bearerT = 'Bearer ' + authtoken;
 
-//     var myJSONObject4 = {
-//         "definitionKey": "API_Test_1234",
-//         "recipients":
-//         [
-//             {
-//                 "contactKey": "anmol.shrivastava@v2force.com",
-//                 "to": "anmol.shrivastava@v2force.com"
-//             }
-//         ]
-//     };
+        console.log("check" + bearerT);
 
-//     request2({
-//         headers: {
-//             'Authorization': bearerT,
-//             'Content-Type': 'application/json'
-//         },
-//         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
-//         method: "POST",
-//         json: true,   // <--Very important!!!
-//         body: myJSONObject4
-//     }, function (error, res, body) {
+        var myJSONObject4 = {
+            "definitionKey": "API_Test_1234",
+            "recipients":
+            [
+                {
+                    "contactKey": SubscriberKey,
+                    "to": EmailAddress
+                }
+            ]
+        };
 
-//         var check2323 = JSON.stringify(res);
-//         console.log("fslhgkushgshi"+check2323);
-//      });
+        request2({
+            headers: {
+                'Authorization': bearerT,
+                'Content-Type': 'application/json'
+            },
+            url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+            method: "POST",
+            json: true,   // <--Very important!!!
+            body: myJSONObject4
+        }, function (error, res, body) {
+
+            var check2323 = JSON.stringify(res);
+            console.log("fslhgkushgshi"+check2323);
+         });
+ 
+    //  Working part till here of the code
 
     //       const client = require('twilio')(accountSid, authToken);
     //          client.messages
@@ -277,67 +279,67 @@ exports.validate = function (req, res) {
     console.log("5 -- For Validate");
     console.log("4");
     console.log("3");
-        console.log("2");
-        console.log("1");
+    console.log("2");
+    console.log("1");
 
-        var request = require('request');
-    var myJSONObject2 = {
-        "grant_type": "client_credentials",
-        "client_id": "ewozgxquu4nriupcx2tylyfl",
-        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-        "account_id": "526000739"
-    };
-    request({
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
-        method: "POST",
-        json: true,   // <--Very important!!!
-        body: myJSONObject2
-    }, function (error, response, body) {
+//     var request = require('request');
+//     var myJSONObject2 = {
+//         "grant_type": "client_credentials",
+//         "client_id": "ewozgxquu4nriupcx2tylyfl",
+//         "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+//         "account_id": "526000739"
+//     };
+//     request({
+//         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+//         method: "POST",
+//         json: true,   // <--Very important!!!
+//         body: myJSONObject2
+//     }, function (error, response, body) {
 
-        statusCode = response.statusCode;
-        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+//         statusCode = response.statusCode;
+//         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
-        if (statusCode === 200) {
-            console.log("INIFLOOP");
-            check(authToken);
-        }
-    });
+//         if (statusCode === 200) {
+//             console.log("INIFLOOP");
+//             check(authToken);
+//         }
+//     });
 
-    logData(req);
-    res.send(200, 'Validate');
-};
+//     logData(req);
+//     res.send(200, 'Validate');
+// };
 
-function check(authtoken) {
+// function check(authtoken) {
 
-    var request2 = require('request');
+//     var request2 = require('request');
 
-    var bearerT = 'Bearer ' + authtoken;
+//     var bearerT = 'Bearer ' + authtoken;
 
-    console.log("check" + bearerT);
+//     console.log("check" + bearerT);
 
-    var myJSONObject4 = {
-        "definitionKey": "API_Test_1234",
-        "recipients":
-        [
-            {
-                "contactKey": "anmol.shrivastava@v2force.com",
-                "to": "anmol.shrivastava@v2force.com"
-            }
-        ]
-    };
+//     var myJSONObject4 = {
+//         "definitionKey": "API_Test_1234",
+//         "recipients":
+//             [
+//                 {
+//                     "contactKey": "anmol.shrivastava@v2force.com",
+//                     "to": "anmol.shrivastava@v2force.com"
+//                 }
+//             ]
+//     };
 
-    request2({
-        headers: {
-            'Authorization': bearerT,
-            'Content-Type': 'application/json'
-        },
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
-        method: "POST",
-        json: true,   // <--Very important!!!
-        body: myJSONObject4
-    }, function (error, res, body) {
+//     request2({
+//         headers: {
+//             'Authorization': bearerT,
+//             'Content-Type': 'application/json'
+//         },
+//         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+//         method: "POST",
+//         json: true,   // <--Very important!!!
+//         body: myJSONObject4
+//     }, function (error, res, body) {
 
-        var check2323 = JSON.stringify(res);
-        console.log("fslhgkushgshi"+check2323);
-     });
+//         var check2323 = JSON.stringify(res);
+//         console.log("fslhgkushgshi" + check2323);
+//     });
 }
