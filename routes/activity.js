@@ -90,7 +90,7 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-    
+
     console.log("5 -- For Execute");
     console.log("4");
     console.log("3");
@@ -100,12 +100,12 @@ exports.execute = function (req, res) {
 
     var requestBody = req.body.inArguments[0];
 
-    const accountSid = requestBody.accountSid;
-    const authToken = requestBody.authToken;
-    const SubscriberKey = requestBody.SubscriberKey;
-    const EmailAddress = requestBody.EmailAddress;
-    const from = requestBody.messagingService;
-    const body = requestBody.body;
+    var accountSid = requestBody.accountSid;
+    var authToken = requestBody.authToken;
+    var SubscriberKey = requestBody.SubscriberKey;
+    var EmailAddress = requestBody.EmailAddress;
+    var from = requestBody.messagingService;
+    var body = requestBody.body;
     console.log("requestBody: " + requestBody);
     console.log("ExecutedaccountSid: " + accountSid);
     console.log("ExecutedauthToken: " + authToken);
@@ -129,8 +129,8 @@ exports.execute = function (req, res) {
         body: myJSONObject2
     }, function (error, response, body) {
 
-         statusCode = response.statusCode;
-         authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        statusCode = response.statusCode;
+        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
