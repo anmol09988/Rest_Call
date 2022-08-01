@@ -138,14 +138,10 @@ exports.execute = function (req, res) {
         }
     });
 
-
-
     function check(authtoken) {
 
         var request2 = require('request');
-
         var bearerT = 'Bearer ' + authtoken;
-
         console.log("check" + bearerT);
 
         var myJSONObject4 = {
@@ -153,8 +149,8 @@ exports.execute = function (req, res) {
             "recipients":
                 [
                     {
-                        "contactKey": SubscriberKey,
-                        "to": EmailAddress
+                        "contactKey": "anmol.shrivastava@v2force.com",
+                        "to": "anmol.shrivastava@v2force.com"
                     }
                 ]
         };
@@ -342,6 +338,4 @@ exports.validate = function (req, res) {
     logData(req);
     res.send(200, 'Validate');
     // };
-
-
 }
