@@ -113,6 +113,7 @@ exports.execute = function (req, res) {
     console.log("EmailAddress: " + EmailAddress);
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
+    console.log("check the data "+requestBody);
 
 
     var request = require('request');
@@ -169,7 +170,6 @@ exports.execute = function (req, res) {
             var check2323 = JSON.stringify(res);
             console.log("fslhgkushgshi" + check2323);
         });
-
     };
 
     //  Working part till here of the code

@@ -86,7 +86,7 @@ define([
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: "+JSON.stringify(endpoints));
-    }
+    } 
 
     function save() {
 
@@ -104,8 +104,8 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "EmailAddress": "{{Event.DEAudience-dff28e5a-4660-d300-72f5-cd2d0890ceb0.EmailAddress}}",
-            "SubscriberKey": "{{Event.DEAudience-dff28e5a-4660-d300-72f5-cd2d0890ceb0.SubscriberKey}}"
+            "EmailAddress": "{{Event.DEAudience-5e7fe007-0435-311d-2dd4-f3895e70f000.EmailAddress}}",
+            "SubscriberKey": "{{Event.DEAudience-5e7fe007-0435-311d-2dd4-f3895e70f000.SubscriberKey}}"
         }];
 
         payload['metaData'].isConfigured = true;
