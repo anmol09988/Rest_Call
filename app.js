@@ -42,7 +42,7 @@ request({
   body: myJSONObject2
 }, function (error, response, body) {
 
-  statusCode = response.statusCode;
+  var statusCode = response.statusCode;
   var authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
   console.log("authorizationtoken"+authorizationtoken);
