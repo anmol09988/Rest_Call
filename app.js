@@ -27,6 +27,7 @@ if ('development' == app.get('env')) {
   app.use(errorhandler());
 }
 
+console.log('ccccccccccccccccccchhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh');
 var request = require('request');
 var myJSONObject2 = {
   "grant_type": "client_credentials",
@@ -50,6 +51,8 @@ request({
     console.log("INIFLOOP");
   }
 });
+
+console.log('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
 
 // HubExchange Routes
 app.get('/', routes.index);
