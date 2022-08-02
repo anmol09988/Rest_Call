@@ -104,7 +104,6 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            
             "EmailAddress": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.EmailAddress}}",
             "SubscriberKey": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.SubscriberKey}}"
         }];
