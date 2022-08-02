@@ -6,7 +6,7 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
-var authToken;
+var authorizationtoken;
 var statusCode;
 
 exports.logExecuteData = [];
@@ -98,14 +98,14 @@ exports.execute = function (req, res) {
     console.log("1");
 
 
-    var requestBody = req.body.inArguments[0];
+    const requestBody = req.body.inArguments[0];
 
-    var accountSid = requestBody.accountSid;
-    var authToken = requestBody.authToken;
-    var SubscriberKey = requestBody.SubscriberKey;
-    var EmailAddress = requestBody.EmailAddress;
-    var from = requestBody.messagingService;
-    var body = requestBody.body;
+    const accountSid = requestBody.accountSid;
+    const authToken = requestBody.authToken;
+    const SubscriberKey = requestBody.SubscriberKey;
+    const EmailAddress = requestBody.EmailAddress;
+    const from = requestBody.messagingService;
+    const body = requestBody.body;
     console.log("requestBody: " + requestBody);
     console.log("ExecutedaccountSid: " + accountSid);
     console.log("ExecutedauthToken: " + authToken);
@@ -130,18 +130,18 @@ exports.execute = function (req, res) {
     }, function (error, response, body) {
 
         statusCode = response.statusCode;
-        authToken = JSON.parse(JSON.stringify(response.body))['access_token'];
+        authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check(authToken);
+            check(authorizationtoken);
         }
     });
 
-    function check(authtoken) {
+    function check(authorizationtoken) {
 
         var request2 = require('request');
-        var bearerT = 'Bearer ' + authtoken;
+        var bearerT = 'Bearer ' + authorizationtoken;
         console.log("check" + bearerT);
 
         var myJSONObject4 = {
