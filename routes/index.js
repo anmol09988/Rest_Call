@@ -20,6 +20,8 @@ exports.index = function(req, res){
     }
 };
 
+console.log('ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
+
 exports.login = function( req, res ) {
     console.log( 'req.body: ', req.body ); 
     res.redirect( '/' );
