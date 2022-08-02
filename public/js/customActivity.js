@@ -104,8 +104,8 @@ define([
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
-            "EmailAddress": "{{Event.DEAudience-61493407-f817-172b-74df-de6d8f474547.EmailAddress}}",
-            "SubscriberKey": "{{Event.DEAudience-61493407-f817-172b-74df-de6d8f474547.SubscriberKey}}"
+            "EmailAddress": "{{Event.DEAudience-dff28e5a-4660-d300-72f5-cd2d0890ceb0.EmailAddress}}",
+            "SubscriberKey": "{{Event.DEAudience-dff28e5a-4660-d300-72f5-cd2d0890ceb0.SubscriberKey}}"
         }];
 
         payload['metaData'].isConfigured = true;
