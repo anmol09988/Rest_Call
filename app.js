@@ -27,6 +27,8 @@ if ('development' == app.get('env')) {
   app.use(errorhandler());
 }
 
+console.log("checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+
 // HubExchange Routes
 app.get('/', routes.index );
 app.post('/login', routes.login );
