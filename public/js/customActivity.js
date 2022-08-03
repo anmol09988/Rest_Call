@@ -50,20 +50,20 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                // if (key === 'accountSid') {
-                //     $('#accountSID').val(val);
-                // }
+                if (key === 'accountSid') {
+                    $('#accountSID').val(val);
+                }
 
-                // if (key === 'authToken') {
-                //     $('#authToken').val(val);
-                // }
+                if (key === 'authToken') {
+                    $('#authToken').val(val);
+                }
 
-                // if (key === 'messagingService') {
-                //     $('#messagingService').val(val);
-                // }
+                if (key === 'messagingService') {
+                    $('#messagingService').val(val);
+                }
 
                 if (key === 'body') {
-                    $('#definitionKey').val(val);
+                    $('#messageBody').val(val);
                 }                                                               
 
             })
@@ -90,20 +90,20 @@ define([
 
     function save() {
 
-        // var accountSid = $('#accountSID').val();
-        // var authToken = $('#authToken').val();
-        // var messagingService = $('#messagingService').val();
-        var definitionKey = $('#definitionKey').val();
-        // console.log("testaccountSid"+accountSid);
-        // console.log("testauthToken"+authToken);
-        // console.log("testmessagingService"+messagingService);
-        console.log("testbody"+definitionKey);
+        var accountSid = $('#accountSID').val();
+        var authToken = $('#authToken').val();
+        var messagingService = $('#messagingService').val();
+        var body = $('#messageBody').val();
+        console.log("testaccountSid"+accountSid);
+        console.log("testauthToken"+authToken);
+        console.log("testmessagingService"+messagingService);
+        console.log("testbody"+body);
 
         payload['arguments'].execute.inArguments = [{
-            // "accountSid": accountSid,
-            // "authToken": authToken,
-            // "messagingService": messagingService,
-            "body": definitionKey,
+            "accountSid": accountSid,
+            "authToken": authToken,
+            "messagingService": messagingService,
+            "body": body,
             "EmailAddress": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.EmailAddress}}",
             "SubscriberKey": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.SubscriberKey}}"
         }];
