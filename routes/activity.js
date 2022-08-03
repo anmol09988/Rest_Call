@@ -133,8 +133,6 @@ exports.execute = function (req, res) {
         statusCode = response.statusCode;
         var authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
-        console.log('eventDefinationKeyinfunction'+eventDefinationKey);
-
         if (statusCode === 200) {
             console.log("INIFLOOP");
             check(authorizationtoken,eventDefinationKey);
@@ -147,11 +145,11 @@ exports.execute = function (req, res) {
         var bearerT = 'Bearer ' + authorizationtoken;
         console.log("check" + bearerT);
 
-        var eventDefinationKey2 = eventDefinationKey;
-        console.log('eventDefinationKey2eventDefinationKey2'+eventDefinationKey2);
+        var eventKey = eventDefinationKey;
+        console.log('eventKeyeventKey'+eventKey);
 
         var myJSONObject4 = {
-            "definitionKey": "API_Test_1234",
+            "definitionKey": eventKey,
             "recipients":
                 [
                     {
