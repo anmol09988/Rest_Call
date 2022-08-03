@@ -135,15 +135,18 @@ exports.execute = function (req, res) {
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check(authorizationtoken);
+            check(authorizationtoken,body);
         }
     });
 
-    function check(authorizationtoken) {
+    function check(authorizationtoken,body) {
 
         var request2 = require('request');
         var bearerT = 'Bearer ' + authorizationtoken;
         console.log("check" + bearerT);
+
+        var eventDefinationKey = body;
+        console.log('eventDefinationKeyeventDefinationKey'+eventDefinationKey);
 
         var myJSONObject4 = {
             "definitionKey": "API_Test_1234",
