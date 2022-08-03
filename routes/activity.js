@@ -112,7 +112,7 @@ exports.execute = function (req, res) {
     console.log("SubscriberKey: " + SubscriberKey);
     console.log("EmailAddress: " + EmailAddress);
     console.log("Executedfrom: " + from);
-    console.log("Executedbody: " + body);
+    console.log("Executedbody: " + eventDefinationKey);
     console.log("check the data "+requestBody);
 
 
