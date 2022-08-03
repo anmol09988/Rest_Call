@@ -299,64 +299,64 @@ exports.validate = function (req, res) {
     console.log("check the data "+requestBody);
 
 
-    var request = require('request');
-    var myJSONObject2 = {
-        "grant_type": "client_credentials",
-        "client_id": "ewozgxquu4nriupcx2tylyfl",
-        "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
-        "account_id": "526000739"
-    };
-    request({
-        url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
-        method: "POST",
-        json: true,   // <--Very important!!!
-        body: myJSONObject2
-    }, function (error, response, body) {
+    // var request = require('request');
+    // var myJSONObject2 = {
+    //     "grant_type": "client_credentials",
+    //     "client_id": "ewozgxquu4nriupcx2tylyfl",
+    //     "client_secret": "d3BNHjIK6RAZQi7VgbXVYnWw",
+    //     "account_id": "526000739"
+    // };
+    // request({
+    //     url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.auth.marketingcloudapis.com/v2/token",
+    //     method: "POST",
+    //     json: true,   // <--Very important!!!
+    //     body: myJSONObject2
+    // }, function (error, response, body) {
 
-        statusCode = response.statusCode;
-        var authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
+    //     statusCode = response.statusCode;
+    //     var authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
-        if (statusCode === 200) {
-            console.log("INIFLOOP");
-            check(authorizationtoken,body);
-        }
-    });
+    //     if (statusCode === 200) {
+    //         console.log("INIFLOOP");
+    //         check(authorizationtoken,body);
+    //     }
+    // });
 
-    function check(authorizationtoken,body) {
+    // function check(authorizationtoken,body) {
 
-        var request2 = require('request');
-        var bearerT = 'Bearer ' + authorizationtoken;
-        console.log("check" + bearerT);
+    //     var request2 = require('request');
+    //     var bearerT = 'Bearer ' + authorizationtoken;
+    //     console.log("check" + bearerT);
 
-        var eventDefinationKey = body;
-        console.log('eventDefinationKeyeventDefinationKey'+eventDefinationKey);
+    //     var eventDefinationKey = body;
+    //     console.log('eventDefinationKeyeventDefinationKey'+eventDefinationKey);
 
-        var myJSONObject4 = {
-            "definitionKey": "API_Test_1234",
-            "recipients":
-                [
-                    {
-                        "contactKey": SubscriberKey,
-                        "to": EmailAddress
-                    }
-                ]
-        };
+    //     var myJSONObject4 = {
+    //         "definitionKey": "API_Test_1234",
+    //         "recipients":
+    //             [
+    //                 {
+    //                     "contactKey": SubscriberKey,
+    //                     "to": EmailAddress
+    //                 }
+    //             ]
+    //     };
 
-        request2({
-            headers: {
-                'Authorization': bearerT,
-                'Content-Type': 'application/json'
-            },
-            url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
-            method: "POST",
-            json: true,   // <--Very important!!!
-            body: myJSONObject4
-        }, function (error, res, body) {
+    //     request2({
+    //         headers: {
+    //             'Authorization': bearerT,
+    //             'Content-Type': 'application/json'
+    //         },
+    //         url: "https://mch4s3mv5j6r7tyf5xqf8s0-y2wm.rest.marketingcloudapis.com/messaging/v1/email/messages",
+    //         method: "POST",
+    //         json: true,   // <--Very important!!!
+    //         body: myJSONObject4
+    //     }, function (error, res, body) {
 
-            var check2323 = JSON.stringify(res);
-            console.log("fslhgkushgshi" + check2323);
-        });
-    };
+    //         var check2323 = JSON.stringify(res);
+    //         console.log("fslhgkushgshi" + check2323);
+    //     });
+    // };
 
     // var request = require('request');
     // var myJSONObject2 = {
