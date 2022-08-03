@@ -97,6 +97,10 @@ exports.execute = function (req, res) {
     console.log("2");
     console.log("1");
 
+    if (!authtoken && expireTime < currentTime) {
+        check2;
+    }
+
 
     const requestBody = req.body.inArguments[0];
 
@@ -113,7 +117,7 @@ exports.execute = function (req, res) {
     console.log("EmailAddress: " + EmailAddress);
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + eventDefinationKey);
-    console.log("check the data "+requestBody);
+    console.log("check the data " + requestBody);
 
 
     var request = require('request');
@@ -135,18 +139,18 @@ exports.execute = function (req, res) {
 
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check(authorizationtoken,eventDefinationKey);
+            check(authorizationtoken, eventDefinationKey);
         }
     });
 
-    function check(authorizationtoken,eventDefinationKey) {
+    function check(authorizationtoken, eventDefinationKey) {
 
         var request2 = require('request');
         var bearerT = 'Bearer ' + authorizationtoken;
         console.log("check" + bearerT);
 
         var eventKey = eventDefinationKey;
-        console.log('eventKeyeventKey'+eventKey);
+        console.log('eventKeyeventKey' + eventKey);
 
         var myJSONObject4 = {
             "definitionKey": eventKey,
@@ -415,9 +419,11 @@ exports.validate = function (req, res) {
     //         console.log("fslhgkushgshi" + check2323);
     //     });
 
-        logData(req);
-        res.send(200, 'Validate');
+    var date_time = new Date();
+    console.log("date_time"+date_time);
+    logData(req);
+    res.send(200, 'Validate');
 
-   // }
+    // }
 
 };
