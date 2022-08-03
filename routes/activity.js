@@ -105,7 +105,7 @@ exports.execute = function (req, res) {
     const SubscriberKey = requestBody.SubscriberKey;
     const EmailAddress = requestBody.EmailAddress;
     const from = requestBody.messagingService;
-    const body = requestBody.body;
+    const eventDefinationKey = requestBody.body;
     console.log("requestBody: " + requestBody);
     console.log("ExecutedaccountSid: " + accountSid);
     console.log("ExecutedauthToken: " + authToken);
@@ -133,20 +133,22 @@ exports.execute = function (req, res) {
         statusCode = response.statusCode;
         var authorizationtoken = JSON.parse(JSON.stringify(response.body))['access_token'];
 
+        console.log('eventDefinationKeyinfunction'+eventDefinationKey);
+
         if (statusCode === 200) {
             console.log("INIFLOOP");
-            check(authorizationtoken,body);
+            check(authorizationtoken,eventDefinationKey);
         }
     });
 
-    function check(authorizationtoken,body) {
+    function check(authorizationtoken,eventDefinationKey) {
 
         var request2 = require('request');
         var bearerT = 'Bearer ' + authorizationtoken;
         console.log("check" + bearerT);
 
-        var eventDefinationKey = body;
-        console.log('eventDefinationKeyeventDefinationKey'+eventDefinationKey);
+        var eventDefinationKey2 = eventDefinationKey;
+        console.log('eventDefinationKey2eventDefinationKey2'+eventDefinationKey2);
 
         var myJSONObject4 = {
             "definitionKey": "API_Test_1234",
