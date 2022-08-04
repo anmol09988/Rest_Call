@@ -8,8 +8,7 @@
     "lang": {
        "en-US": {
            "name": "Rest API CA",
-           "description": "Use to make API Calls from Journey Builder",
-           "TwilioMessage":"test"
+           "description": "Use to make API Calls from Journey Builder"
        }
     },
     "arguments": {

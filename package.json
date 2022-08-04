@@ -10,22 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmaitz/twilio-sfmc.git"
+    "url": "git+https://github.com/anmol09988/Rest_Call"
   },
   "keywords": [
-    "twilio",
-    "twilio salesforce marketing cloud",
+    "Rest",
+    "salesforce marketing cloud",
     "journey",
     "builder",
     "salesforce marketing cloud",
     "heroku"
   ],
-  "author": "John Maitz",
+  "author": "Anmol Shrivastava",
   "license": "",
   "bugs": {
-    "url": "https://github.com/jmaitz/twilio-sfmc/issues"
+    "url": "https://github.com/anmol09988/Rest_Call"
   },
-  "homepage": "https://github.com/jmaitz/twilio-sfmc#readme",
+  "homepage": "https://github.com/anmol09988/Rest_Call#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "bower": "^1.8.0",
@@ -34,7 +34,6 @@
     "jsonwebtoken": "^8.0.1",
     "request": "^2.81.0",
     "require": "^0.4.4",
-    "twilio": "^3.36.0",
     "uglify-js": "^3.6.4" 
   }
 }
