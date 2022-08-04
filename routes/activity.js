@@ -212,6 +212,6 @@ exports.validate = function (req, res) {
 
     // var date_time = new Date();
     // console.log("date_time"+date_time);
-    // logData(req);
-    // res.send(200, 'Validate');
+    logData(req);
+    res.send(200, 'Validate');
 };
