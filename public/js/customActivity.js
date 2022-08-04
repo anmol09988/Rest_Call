@@ -76,32 +76,12 @@ define([
 
     }
 
-    // function onGetTokens (tokens) {
-    //     // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-    //     console.log("Tokens function: "+JSON.stringify(tokens));
-    //     //authTokens = tokens;
-    // }
-
-    // function onGetEndpoints (endpoints) {
-    //     // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-    //     console.log("Get End Points function: "+JSON.stringify(endpoints));
-    // } 
-
     function save() {
 
-        // var accountSid = $('#accountSID').val();
-        // var authToken = $('#authToken').val();
-        // var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        // console.log("testaccountSid"+accountSid);
-        // console.log("testauthToken"+authToken);
-        // console.log("testmessagingService"+messagingService);
         console.log("testbody"+body);
 
         payload['arguments'].execute.inArguments = [{
-            // "accountSid": accountSid,
-            // "authToken": authToken,
-            // "messagingService": messagingService,
             "body": body,
             "EmailAddress": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.EmailAddress}}",
             "SubscriberKey": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.SubscriberKey}}"
