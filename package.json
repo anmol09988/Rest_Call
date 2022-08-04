@@ -1,5 +1,5 @@
 {
-  "name": "Rest API CA",
+  "name": "twilio-journey-builder-example",
   "version": "1.0.0",
   "description": "Journey Builder Activity Template",
   "engines": {
@@ -10,22 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anmol09988/Rest_Call"
+    "url": "git+https://github.com/jmaitz/twilio-sfmc.git"
   },
   "keywords": [
-    "Rest",
-    "salesforce marketing cloud",
+    "twilio",
+    "twilio salesforce marketing cloud",
     "journey",
     "builder",
     "salesforce marketing cloud",
     "heroku"
   ],
-  "author": "Anmol Shrivastva",
+  "author": "John Maitz",
   "license": "",
   "bugs": {
-    "url": "https://github.com/anmol09988/Rest_Call"
+    "url": "https://github.com/jmaitz/twilio-sfmc/issues"
   },
-  "homepage": "https://github.com/anmol09988/Rest_Call",
+  "homepage": "https://github.com/jmaitz/twilio-sfmc#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "bower": "^1.8.0",
@@ -34,6 +34,7 @@
     "jsonwebtoken": "^8.0.1",
     "request": "^2.81.0",
     "require": "^0.4.4",
+    "twilio": "^3.36.0",
     "uglify-js": "^3.6.4" 
   }
 }
