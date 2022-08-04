@@ -1,6 +1,5 @@
 'use strict';
-// Module Dependencies
-// -------------------
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var errorhandler = require('errorhandler');
@@ -12,27 +11,20 @@ var activity = require('./routes/activity');
 
 var app = express();
 
-// Configure Express
+
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json({ type: 'application/json' }));
-//app.use(bodyParser.urlencoded({ extended: true }));
-
-//app.use(express.methodOverride());
-//app.use(express.favicon());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Express in Development Mode
 if ('development' == app.get('env')) {
   app.use(errorhandler());
 }
 
-// HubExchange Routes
 app.get('/', routes.index);
 app.post('/login', routes.login);
 app.post('/logout', routes.logout);
 
-// Custom Hello World Activity Routes
 app.post('/check/save/', activity.save);
 app.post('/check/validate/', activity.validate);
 app.post('/check/publish/', activity.publish);
