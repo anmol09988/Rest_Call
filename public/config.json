@@ -15,8 +15,8 @@
         "execute": {
             "inArguments": [
                 {
-                    "EmailAddress": "{{Event.DEAudience-371d1c1a-f235-3552-8901-4ff039bc72ee.EmailAddress}}",
-                    "SubscriberKey": "{{Event.DEAudience-371d1c1a-f235-3552-8901-4ff039bc72ee.SubscriberKey}}"
+                    "EmailAddress": "{{Event.DEAudience-a7974921-b412-f583-5c69-c8fb100a8cc3.EmailAddress}}",
+                    "SubscriberKey": "{{Event.DEAudience-a7974921-b412-f583-5c69-c8fb100a8cc3.SubscriberKey}}"
                 }
             ],
             "outArguments": [],
