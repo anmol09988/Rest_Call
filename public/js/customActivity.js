@@ -8,7 +8,7 @@ define([
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
-    var steps = [ // initialize to the same value as what's set in config.json for consistency
+    var steps = [
         { "label": "Create SMS Message", "key": "step1" }
     ];
     var currentStep = steps[0].key;
@@ -20,11 +20,8 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
-    //connection.on('clickedBack', onClickedBack);
-    //connection.on('gotoStep', onGotoStep);
 
     function onRender() {
-        // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
@@ -75,14 +72,9 @@ define([
     }
 
     function onGetTokens (tokens) {
-        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
-        //authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
-        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
     } 
 
     function save() {
