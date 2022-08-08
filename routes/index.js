@@ -1,7 +1,11 @@
 'use strict';
 
+// Deps
 var activity = require('./activity');
 
+/*
+ * GET home page.
+ */
 exports.index = function (req, res) {
     if (!req.session.token) {
         res.render('index', {
