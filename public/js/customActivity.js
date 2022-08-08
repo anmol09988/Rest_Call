@@ -1,6 +1,6 @@
 define([
     'postmonger'
-], function (
+], function(
     Postmonger
 ) {
     'use strict';
@@ -8,7 +8,7 @@ define([
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
-    var steps = [
+    var steps = [ 
         { "label": "Create SMS Message", "key": "step1" }
     ];
     var currentStep = steps[0].key;
@@ -27,22 +27,22 @@ define([
         connection.trigger('requestEndpoints');
     }
 
-    function initialize(data) {
-        console.log("Initializing data data: " + JSON.stringify(data));
+  function initialize(data) {
+        console.log("Initializing data data: "+ JSON.stringify(data));
         if (data) {
             payload = data;
-        }
+        }    
 
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
             payload['arguments'].execute.inArguments &&
             payload['arguments'].execute.inArguments.length > 0
-        );
+         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        console.log('Has In arguments: ' + JSON.stringify(inArguments));
+        console.log('Has In arguments: '+JSON.stringify(inArguments));
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -61,7 +61,7 @@ define([
 
                 if (key === 'body') {
                     $('#messageBody').val(val);
-                }
+                }                                                               
 
             })
         });
@@ -73,17 +73,32 @@ define([
         });
 
     }
+
+
     function save() {
 
+        var accountSid = $('#accountSID').val();
+        var authToken = $('#authToken').val();
+        var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
+        console.log("testaccountSid"+accountSid);
+        console.log("testauthToken"+authToken);
+        console.log("testmessagingService"+messagingService);
+        console.log("testbody"+body);
+
         payload['arguments'].execute.inArguments = [{
+            "accountSid": accountSid,
+            "authToken": authToken,
+            "messagingService": messagingService,
             "body": body,
             "EmailAddress": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.EmailAddress}}",
             "SubscriberKey": "{{Event.DEAudience-e0a2b016-8e35-ef58-fc4f-8320545e3a14.SubscriberKey}}"
         }];
 
         payload['metaData'].isConfigured = true;
+
+        console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }
+    }                    
 });
