@@ -31,7 +31,6 @@ define([
     }
 
   function initialize(data) {
-        console.log("Initializing data data: "+ JSON.stringify(data));
         if (data) {
             payload = data;
         }    
@@ -44,8 +43,6 @@ define([
          );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
-        console.log('Has In arguments: '+JSON.stringify(inArguments));
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
@@ -94,10 +91,6 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
-        console.log("testaccountSid"+accountSid);
-        console.log("testauthToken"+authToken);
-        console.log("testmessagingService"+messagingService);
-        console.log("testbody"+body);
 
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
@@ -109,8 +102,6 @@ define([
         }];
 
         payload['metaData'].isConfigured = true;
-
-        console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
     }                    
