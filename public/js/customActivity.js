@@ -70,13 +70,7 @@ define([
         });
 
     }
-
-    function onGetTokens (tokens) {
-    }
-
-    function onGetEndpoints (endpoints) {
-    } 
-
+    
     function save() {
 
         var body = $('#messageBody').val();
