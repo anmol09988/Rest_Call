@@ -21,11 +21,11 @@ define([
 
     connection.on('clickedNext', save);
 
-    // function onRender() {
-    //     connection.trigger('ready');
-    //     connection.trigger('requestTokens');
-    //     connection.trigger('requestEndpoints');
-    // }
+    function onRender() {
+        connection.trigger('ready');
+        connection.trigger('requestTokens');
+        connection.trigger('requestEndpoints');
+    }
 
   function initialize(data) {
         if (data) {
@@ -71,11 +71,11 @@ define([
 
     }
 
-    // function onGetTokens (tokens) {
-    // }
+    function onGetTokens (tokens) {
+    }
 
-    // function onGetEndpoints (endpoints) {
-    // } 
+    function onGetEndpoints (endpoints) {
+    } 
 
     function save() {
 
