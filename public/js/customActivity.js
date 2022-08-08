@@ -13,19 +13,19 @@ define([
     ];
     var currentStep = steps[0].key;
 
-    $(window).ready(onRender);
+    // $(window).ready(onRender);
 
-    connection.on('initActivity', initialize);
-    connection.on('requestedTokens', onGetTokens);
-    connection.on('requestedEndpoints', onGetEndpoints);
+    // connection.on('initActivity', initialize);
+    // connection.on('requestedTokens', onGetTokens);
+    // connection.on('requestedEndpoints', onGetEndpoints);
 
-    connection.on('clickedNext', save);
+    // connection.on('clickedNext', save);
 
-    function onRender() {
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-    }
+    // function onRender() {
+    //     connection.trigger('ready');
+    //     connection.trigger('requestTokens');
+    //     connection.trigger('requestEndpoints');
+    // }
 
   function initialize(data) {
         if (data) {
@@ -70,7 +70,13 @@ define([
         });
 
     }
-    
+
+    // function onGetTokens (tokens) {
+    // }
+
+    // function onGetEndpoints (endpoints) {
+    // } 
+
     function save() {
 
         var body = $('#messageBody').val();
